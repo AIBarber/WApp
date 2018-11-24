@@ -40,6 +40,6 @@
 
    <!-- <view wx:for="{{current_customer}}" wx:if="{{face_id!=null}}"> -->
    <view wx:for="{{current_customer}}" wx:key='id'>
-      <template is="customer" data="{{id:item.openid,status:item.status,path:item.photo_in_store,time:item.enter_time}}"/>
+      <template is="customer" data="{{id:item.openid,status:item.status,path:item.photo_url,time:item.enter_time}}"/>
    </view>
 </view>
