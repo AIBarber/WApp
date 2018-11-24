@@ -74,7 +74,7 @@ Page({
       api.BarberSubscribe,
       {
         'barberid ': null,
-        'costomerid': app.globalData.userid,
+        'customerid': app.globalData.userid,
       },
       'POST').then(res => {
         //if (res.data) {}
@@ -107,7 +107,7 @@ Page({
     util.weshowRequest(
       api.CustomerAttribute,
       {
-        'costomerid': app.globalData.userid
+        'customerid': app.globalData.userid
       },
       'POST').then(res => {
         //if (res.data) {}

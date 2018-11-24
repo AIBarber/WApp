@@ -5,6 +5,7 @@ var app = getApp();
 
 
 function getInfo(that) {
+    detectAttribute();
     console.log('getDataList ' + api.StoreCustomerDetail);
     wx.showNavigationBarLoading();
 
@@ -111,7 +112,7 @@ function getAttribute(that) {
     util.weshowRequest(
       api.CustomerAttribute,
       {
-        'costomerid': app.globalData.userid
+        'customerid': app.globalData.userid
       },
       'POST').then(res => {
         //if (res.data) {}
@@ -135,6 +136,22 @@ function getAttribute(that) {
         that.setData({ attribute: (wx.getStorageSync('attribute') || []) });
       });
 }
+function detectAttribute() {
+  console.log('detectAttribute ' + api.FaceDetect);
+
+  util.weshowRequest(
+    api.FaceDetect,
+    {
+      'openid': app.globalData.userid
+    },
+    'POST').then(res => {
+      console.log('detectAttribute');
+      console.log(res);
+    }).catch((err) => {
+      console.log('detectAttribute err' + err);
+    });
+}
+
 
 function goToMyBarber() {
     wx.navigateTo({
@@ -173,6 +190,7 @@ module.exports = {
   getReservation,
   getCurService,
   getAttribute,
+  detectAttribute,
   goToMyBarber,
   goToCoupon,
   goToConsumption,

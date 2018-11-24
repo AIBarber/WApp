@@ -60,14 +60,15 @@
  </view>
 <view style='display:flex;flex-direction:row;font-size:16px;border-width:5px;border-color:black; border-right: 1rpx solid black;border-top: 1rpx solid black;border-left: 1rpx solid black;border-bottom: 1rpx solid black;margin-left:10px;margin-right:10px;margin-top:10px;'>
     <view class='view-left'>
-      <text style='margin-top:10px'>颜值：80</text>
-      <text style='margin-top:22px'>脸型：方型</text>
-      <text style='margin-top:22px'>肤色：黄</text>
+      <text style='margin-top:10px'>颜值：{{attribute.beauty}}</text>
+      <text style='margin-top:22px'>脸型：{{attribute.face_shape}}</text>
+      <text style='margin-top:22px'>肤色：{{attribute.race}}</text>
+
     </view>
-     <image class='image3' src='' mode='scaleToFill'/>
+     <image class='image3' src='{{attribute.face_file}}' mode='scaleToFill'/>
     <view class='view-right'>
-      <text style='margin-top:10px'>年龄：20-25</text>
-      <text style='margin-top:22px'>性别：？</text>
+      <text style='margin-top:10px'>年龄：{{attribute.age}}</text>
+      <text style='margin-top:22px'>性别：{{attribute.gender}}</text>
       <text style='margin-top:22px'>眉眼鼻唇</text>
     </view>
  </view>

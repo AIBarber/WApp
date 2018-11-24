@@ -4,7 +4,7 @@
 <template data="{{...myDialog}}" is="dialog" />-->
 
 <!-- <view class="container"> -->
-  <block wx:if="{{userType != 1}}">
+  <block wx:if="{{userType != 1 && faceid != null}}">
     <include src="./CustomerHome.wxml"/>
   </block>
   <block wx:elif="{{faceid == null}}">

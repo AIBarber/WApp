@@ -46,6 +46,7 @@ module.exports = {
   OrderDetail: ApiRootUrl + 'order/detailbyid',
   GetFaceId: ApiRootUrl + 'bdcloud/getfaceid',
   FaceRegister: ApiRootUrl + 'bdcloud/faceregister',
+  FaceDetect: ApiRootUrl + 'bdcloud/facedetect',
   BarberRegister: ApiRootUrl + 'barber/register',
   CustomerSubscribeList: ApiRootUrl + 'customer/subscribelist',
   CustomerDiscountList: ApiRootUrl + 'customer/discountlist',
