@@ -1,0 +1,5 @@
+<!--pages/endService/end.wxml-->
+<view style='display:flex;flex-direction:row;margin-top:0px;margin-left:2%;margin-bottom:0px; width:94%;background:white;' data-id='{{id}}'>
+   <image style="width:100px;height:90px;margin-left:6px;margin-top:12px;margin-bottom:12px;" src='{{path}}' mode='scaleToFill'/>
+   <text>进店时长：{{}}</text>
+   </view>

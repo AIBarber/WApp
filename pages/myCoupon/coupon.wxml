@@ -1,0 +1,9 @@
+<!--pages/myCoupon/coupon.wxml-->
+<!-- <button class='buttonLeft' bindtap='backToprevPage'>
+       <image src='../../icon/back.png' mode='widthFix' class='imageLeft'></image>
+</button> -->
+
+<view class='text'>
+  <text>我的优惠券</text>
+</view>
+

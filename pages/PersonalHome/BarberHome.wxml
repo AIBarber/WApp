@@ -1,0 +1,64 @@
+<!--pages/BarBer/personal.wxml-->
+<import src='../template/personal.wxml'/><!--导入模板-->
+<import src='../template/template.wxml'/><!--导入模板-->
+<import src='../template/barber.wxml'/><!--导入模板-->
+<template data="{{...myDialog}}" is="dialog" />
+
+ <view style='display:flex;flex-direction:row;margin-top:1px;margin-left:2%; width:94%;background:white;' data-id='{{barberDetails.id}}'>
+   <image style="width:100px;height:88px;margin-left:6px;margin-top:6px;margin-bottom:6px;" src='{{barberDetails.photo_url}}' mode='scaleToFill'/>
+      <view style="display:flex;flex-direction:column;margin-left:10px;font-size:16px">
+     <text style='margin-top:10px' decode='true'>级别：{{barberDetails.level}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;年限{{barberDetails.years}}</text>   
+     <text style='margin-top:5px'>电话：{{barberDetails.telephone}} </text>     
+      </view>
+   </view>
+
+ <button bindtap='changeToCustomer' class='button'>切换为顾客</button>
+
+<view style='font-weight:bold'>
+  <text decode='true' >&nbsp;&nbsp;我的预约：</text>
+</view>
+
+<view>
+   <view style='display:flex;flex-direction:column;margin-top:5px;margin-left:2%;margin-right:2%;;border-width:5px;border-color:black; border-right: 1rpx solid black;border-top: 1rpx solid black;border-left: 1rpx solid black;border-bottom: 1rpx solid black;'>
+    <view style="display:flex;flex-direction:row;font-size:15px;background:	#F0F0F0" >
+         <text decode='true' style='margin-top:5px;width:23%;margin-left:30px'>时间 </text>
+         <text style='margin-top:5px;width:23%'>预约人</text> 
+        <text decode='true' style='margin-top:5px;width:23%'>店铺 </text> 
+         <text decode='true' style='margin-top:5px;width:23%'>预约码</text> 
+      </view>
+    </view>
+   <view wx:for="{{reservations}}">
+      <template is="barber_reservations" data="{{item}}"/>
+   </view>
+</view>
+
+<text>\n</text>
+<view style='font-weight:bold'>
+  <text decode='true' >&nbsp;&nbsp;预约时段管理：</text>
+</view>
+
+<view>
+   <view style='display:flex;flex-direction:column;margin-top:5px;margin-left:2%;margin-right:2%;;border-width:5px;border-color:black; border-right: 1rpx solid black;border-top: 1rpx solid black;border-left: 1rpx solid black;border-bottom: 1rpx solid black;'>
+    <view style="display:flex;flex-direction:row;font-size:15px;background:	white" >
+        <text style='margin-top:5px;width:32%;margin-left:10px'>{{timeToReserve.slot0}}</text>
+        <text style='margin-top:5px;width:32%'>{{timeToReserve.slot1}}</text> 
+        <text style='margin-top:5px;width:32%'>{{timeToReserve.slot2}}</text>  
+    </view>
+   </view>
+
+    <view wx:for="{{timeToReserve.list}}">
+      <template is="time_reservations" data="{{item}}"/>
+    </view>
+ </view>
+
+<text>\n</text>
+<view style='display:flex;flex-direction:column;font-size:17px;'>
+     <view class='text2' bindtap='goToMyOrders'>
+      <text style='width:80%;'>我的订单：{{orders.length}}单</text>
+      <image class='image4' src='../../icon/camera_back.png' mode='scaleToFill'/>
+    </view>
+    <view class='text2' bindtap='goToMyCustomers'>
+      <text style='width:80%;'>我的顾客：{{}}人</text>
+      <image class='image4' src='../../icon/camera_back.png' mode='scaleToFill'/>
+    </view>
+ </view>

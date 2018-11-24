@@ -1,0 +1,12 @@
+<!--pages/myHistoryCost/cost.wxml-->
+<!-- <button class='buttonLeft' bindtap='backToprevPage'>
+       <image src='../../icon/back.png' mode='widthFix' class='imageLeft'></image>
+</button> -->
+<import src='../template/customer_detial.wxml'/>
+<view class='text'>
+  <text>我的消费记录</text>
+</view>
+
+<view wx:for="{{cost_list}}">
+      <template is="cost_list" data="{{id:item.id,time:item.time,cost:item.cost,style:item.style,pathS:item.cover_image,pathE:item.cover_image,name:item,name,score:item.score}}"/>
+ </view>
