@@ -15,12 +15,12 @@
  <button bindtap='changeToCustomer' class='button'>切换为顾客</button>
 
 <view style='font-weight:bold;margin-top:10px;'>
-  <text decode='true' >&nbsp;&nbsp;我的预约：</text>
+  <text decode='true' wx:if="{{reservations!=null && reservations!=''}}" >&nbsp;&nbsp;我的预约：</text>
 </view>
 
-<view>
+<view  wx:if="{{reservations!=null && reservations!=''}}">
    <view style='display:flex;flex-direction:column;margin-top:5px;margin-left:2%;margin-right:2%;;border-width:5px;border-color:black; border-right: 1rpx solid black;border-top: 1rpx solid black;border-left: 1rpx solid black;border-bottom: 1rpx solid black;'>
-    <view style="display:flex;flex-direction:row;font-size:15px;background:	#F0F0F0" >
+    <view style="display:flex;flex-direction:row;font-size:15px;background:	#F0F0F0">
          <text decode='true' style='margin-top:5px;width:23%;margin-left:30px'>时间 </text>
          <text style='margin-top:5px;width:23%'>预约人</text> 
         <text decode='true' style='margin-top:5px;width:23%'>店铺 </text> 

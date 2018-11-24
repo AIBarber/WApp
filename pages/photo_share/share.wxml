@@ -6,7 +6,7 @@
  <button open-type="share" class='button'>分享</button>
 
  <view class='text'>
-    <text>分享给新朋友,朋友登陆后可以获得理发优惠券一张</text>
+    <text>分享给新朋友,朋友登陆后可以获得理发优惠券一张，您也可以保存至本地后分享到其他平台。</text>
  </view>
 
  <button class='button2' bindtap='saveToLocal'> 保存至相册</button>
