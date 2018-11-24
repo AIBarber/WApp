@@ -62,6 +62,17 @@ App({
     console.log(options);
     if (options != null && options.query != null && options.query.openid != null) {
       console.log(options.query.openid);
+      this.globalData.inviter_id = options.query.openid;
+      console.log(this.globalData.userid);
+      if (this.globalData.userid != null && this.globalData.userid != '') {
+        this.webAddInviterInfo();
+      }
+    }
+  },
+
+  webAddInviterInfo: function () {
+    var that = this;
+    if (this.globalData.inviter_id != null && this.globalData.inviter_id != '') {
       wx.request({
         url: api.UserShare,
         method: 'POST',
@@ -74,7 +85,7 @@ App({
         },
         data: {
           'userid': that.globalData.userid,
-          'inviter_id': that.globalData.shareOpenid,
+          'inviter_id': that.globalData.inviter_id,
           'inviter_code': that.globalData.shareInviterCode,
           'add_time': Math.floor((new Date()).getTime() / 1000)
         },
@@ -115,6 +126,7 @@ App({
               wx.setStorageSync('userid', res1.data.data.openid);
               wx.setStorageSync('session_key', res1.data.data.session_key);
               that.getUserInfoIfAuthed();
+              that.webAddInviterInfo();
               //that.addUserInfo();//will be null
               /*wx.getUserInfo({
                 withCredentials: true,
@@ -251,6 +263,7 @@ App({
     userType: 2,
     hasUserInfo: false,
     accountInfo: '',
+    inviter_id: null,
     shareOpenid: '0',
     shareInviterCode: '0',
     userid: null,
