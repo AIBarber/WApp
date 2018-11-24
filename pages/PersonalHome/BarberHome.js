@@ -40,14 +40,14 @@ function getDataList_details(that) {
 }
 
 function getDataList_reservations(that) {
-  console.log('getDataList ' + api.BarberSubscribeList);
+  console.log('getDataList_reservations ' + api.BarberSubscribeList);
   wx.showNavigationBarLoading();
 
   util.weshowRequest(
     api.BarberSubscribeList,
     {
       'size': 10,
-      'storeid': that.data.barberID
+      'barberid': app.globalData.userid
     },
     'POST').then(res => {
       //if (res.data) {}
