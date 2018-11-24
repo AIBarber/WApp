@@ -22,7 +22,7 @@ function getInfo(that) {
         console.log(res.data.type)
         app.globalData.userType=res.data.type
         // console.log(that.data);
-        //that.stopRefreshing();
+        that.stopRefreshing();
         //that.waitUpdate();
       }).catch((err) => {
         console.log('getDataList err22222222222222222222' + err);
@@ -36,9 +36,9 @@ function getInfo(that) {
         });
         that.setData({ info: (wx.getStorageSync('info') || []) });
       });
-  }
+}
 
-  function getReservation(that) {
+function getReservation(that) {
     console.log('getDataList ' + api.CustomerSubscribeList);
     wx.showNavigationBarLoading();
 
@@ -55,7 +55,7 @@ function getInfo(that) {
         // success
         that.setData({ reservation: res.data.data.list });
         // console.log(that.data);
-        //that.stopRefreshing();
+        that.stopRefreshing();
         //that.waitUpdate();
       }).catch((err) => {
         console.log('getDataList err 44444444444444444444444444444444' + err);
@@ -69,9 +69,42 @@ function getInfo(that) {
         });
         that.setData({ reservation: (wx.getStorageSync('reservation') || []) });
       });
-  }
+}
 
-  function getAttribute(that) {
+function getCurService(that) {
+  console.log('getDataList ' + api.CurrentOrder);
+  wx.showNavigationBarLoading();
+
+  util.weshowRequest(
+    api.CurrentOrder,
+    {
+      'customerid': app.globalData.userid,
+    },
+    'POST').then(res => {
+      //if (res.data) {}
+      console.log('getReservation ' + app.globalData.userid);
+      console.log('getDataList ************************************');
+      console.log(res);
+      // success
+      that.setData({ cur_service: res.data.data.list });
+      // console.log(that.data);
+      that.stopRefreshing();
+      //that.waitUpdate();
+    }).catch((err) => {
+      console.log('getDataList err 44444444444444444444444444444444' + err);
+      // fail
+      that.stopRefreshing();
+      wx.showToast({
+        title: '正在获取数据…',
+        icon: 'loading',
+        duration: 3000,
+        mask: true
+      });
+      that.setData({ cur_service: (wx.getStorageSync('cur_service') || []) });
+    });
+}
+
+function getAttribute(that) {
     console.log('getDataList ' + api.CustomerAttribute);
     wx.showNavigationBarLoading();
 
@@ -87,12 +120,12 @@ function getInfo(that) {
         // success
         that.setData({ attribute: res.data });
         // console.log(that.data);
-        //that.stopRefreshing();
+        that.stopRefreshing();
         //that.waitUpdate();
       }).catch((err) => {
         console.log('getDataList err' + err);
         // fail
-        //that.stopRefreshing();
+        that.stopRefreshing();
         wx.showToast({
           title: '正在获取数据…',
           icon: 'loading',
@@ -101,9 +134,9 @@ function getInfo(that) {
         });
         that.setData({ attribute: (wx.getStorageSync('attribute') || []) });
       });
-  }
+}
 
-  function goToMyBarber() {
+function goToMyBarber() {
     wx.navigateTo({
       url: '../myBarber/myBarber',
     })
@@ -138,6 +171,7 @@ function changeToBarber(that) {
 module.exports = {
   getInfo,
   getReservation,
+  getCurService,
   getAttribute,
   goToMyBarber,
   goToCoupon,

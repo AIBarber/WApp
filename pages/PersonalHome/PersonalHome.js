@@ -29,6 +29,7 @@ Page({
     reservation: null,
     attribute: null,
     mysubscribe: null,
+    cur_service: null,
 
     //BarberHome
     reservations: [],
@@ -69,6 +70,7 @@ Page({
       CustomerHome.getInfo(this);
       CustomerHome.getReservation(this);
       CustomerHome.getAttribute(this);
+      CustomerHome.getCurService(this);
     }
 
     //BarberHome
@@ -151,6 +153,7 @@ Page({
     CustomerHome.getInfo(this);
     CustomerHome.getReservation(this);
     CustomerHome.getAttribute(this);
+    CustomerHome.getCurService(this);
   },
 
   select0: function (event) {

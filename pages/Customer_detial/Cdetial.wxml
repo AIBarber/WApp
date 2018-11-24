@@ -2,10 +2,6 @@
 <!-- 顾客详情页面 -->
 <!-- 引入模板 -->
 <import src='../template/customer_detial.wxml'/>
-<!-- <button class='buttonLeft' bindtap='backToprevPage'>
-       <image src='../../icon/back.png' mode='widthFix' class='imageLeft'></image>
- </button> -->
- 
 <!-- <view>
    <view wx:for="{{customer_detail}}" wx:key='id'>
       <template is="customer_info" data="{{id:item.id,haircut_num:item.enabled,path:item.photo_url,status:item.status,wash_num:item.wash_num,style_last:item.style_last,time_stay:item.time_stay}}"/>

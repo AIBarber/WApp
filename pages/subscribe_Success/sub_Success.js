@@ -9,17 +9,14 @@ Page({
    * 页面的初始数据
    */
   data: {
-   info_reservation:null
+    reservation:null
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    //获取上一个页面照片的临时地址
-    var pages = getCurrentPages();
-    var Page = pages[pages.length - 1];//当前页
-    var prevPage = pages[pages.length - 2];  //上一个页面
+    this.getReservation();
   },
 
   backToprevPage: function () {
@@ -28,13 +25,47 @@ Page({
   },
 
 
-  getInfoOfReservation:function(){
+ getReservation: function() {
+    console.log('getDataList ' + api.CustomerSubscribeList);
+    wx.showNavigationBarLoading();
 
+    util.weshowRequest(
+      api.CustomerSubscribeList,
+      {
+        'customerid': app.globalData.userid,
+      },
+      'POST').then(res => {
+        //if (res.data) {}
+        console.log('getReservation ' + app.globalData.userid);
+        console.log('getDataList 33333333333333333333333333333333');
+        console.log(res);
+        // success
+        that.setData({ reservation: res.data.data.list });
+        // console.log(that.data);
+        that.stopRefreshing();
+        //that.waitUpdate();
+      }).catch((err) => {
+        console.log('getDataList err 44444444444444444444444444444444' + err);
+        // fail
+        //that.stopRefreshing();
+        wx.showToast({
+          title: '正在获取数据…',
+          icon: 'loading',
+          duration: 3000,
+          mask: true
+        });
+        that.setData({ reservation: (wx.getStorageSync('reservation') || []) });
+      });
   },
   
   goToSelf:function(){
     wx.switchTab({
       url: '../PersonalHome/PersonalHome',
     })
+  },
+
+  stopRefreshing: function () {
+    wx.hideNavigationBarLoading();
+    wx.stopPullDownRefresh();
   }
 })
