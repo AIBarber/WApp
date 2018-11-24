@@ -21,6 +21,10 @@ Page({
     //getApp().editTabBar();
   },
 
+  onShareAppMessage: function (ops) {
+    return model.getShareFunction();
+  },
+
 // 获取店铺列表
   getDataList: function () {
     console.log('getDataList ' + api.StoreList);

@@ -35,6 +35,10 @@ Page({
     that.getDataList_customer();
   },
 
+  onShareAppMessage: function (ops) {
+    return model.getShareFunction();
+  },
+
 // 获取数据列表
   getDataList_shop: function () {
     console.log('getDataList ' + api.StoreDetail);

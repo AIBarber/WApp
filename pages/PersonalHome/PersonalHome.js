@@ -82,6 +82,10 @@ Page({
     }
   },
 
+  onShareAppMessage: function (ops) {
+    return model.getShareFunction();
+  },
+
   onShow: function () {
     //this.getAccount(app.globalData.userid);
     console.log('onShow... data');
@@ -97,19 +101,6 @@ Page({
    */
   onReady: function () {
     console.log('onReady... data');
-  },
-
-  onShareAppMessage: function (res) {
-    return {
-      title: model.getNewsShareTitle(),
-      path: '/pages/ShopList/List',
-      success: function (res) {
-        // 转发成功
-      },
-      fail: function (res) {
-        // 转发失败
-      }
-    }
   },
 
   onGotUserInfo: function (e) {

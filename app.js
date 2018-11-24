@@ -2,11 +2,14 @@
 var api = require('./config/api.js');
 
 App({
-  onLaunch: function () {
+  onLaunch: function (options) {
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
+
+    console.log('App onLaunch')
+    this.updateShareInfo(options);
 
     this.wxLogin();
     // 登录
@@ -53,6 +56,37 @@ App({
     });
   },*/
 
+
+  updateShareInfo: function (options) {
+    console.log('updateShareInfo');
+    console.log(options);
+    if (options != null && options.query != null && options.query.openid != null) {
+      console.log(options.query.openid);
+      wx.request({
+        url: api.UserShare,
+        method: 'POST',
+        header: {
+          'Content-Type': 'application/json',
+          'X-WxApp-ID': that.globalData.appid,
+          'X-WxOpenid': that.globalData.userid,
+          //'X-Weshow-Token': wx.getStorageSync('token')
+          'X-Weshow-Token': that.globalData.userid
+        },
+        data: {
+          'userid': that.globalData.userid,
+          'inviter_id': that.globalData.shareOpenid,
+          'inviter_code': that.globalData.shareInviterCode,
+          'add_time': Math.floor((new Date()).getTime() / 1000)
+        },
+        success: function (res) {
+          console.log('app updateShareInfo success');
+          console.log(res);
+        },
+        fail: function (err) {
+        }
+      });
+    }
+  },
 
   wxLogin: function () {
     var that = this;

@@ -31,6 +31,7 @@ module.exports = {
   UserInfo: ApiRootUrl + 'user/info',
   UserAdd: ApiRootUrl + 'user/add',
   UserRegister: ApiRootUrl + 'barber/add',
+  UserShare: ApiRootUrl + 'customer/share',
   StoreList: ApiRootUrl + 'store/list',
   StoreDetail: ApiRootUrl + 'store/detailbyid',
   StoreBarberList: ApiRootUrl + 'store/barberlist',

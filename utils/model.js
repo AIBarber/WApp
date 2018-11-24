@@ -504,6 +504,27 @@ function getShareTitle(my, phase, name, time, award) {
   }
 }
 
+function getShareFunction(add, imageUrl) {
+  var sharePath = 'pages/ShopList/List?openid=' + app.globalData.userid;
+  if (add != null && add != '') {
+    sharePath += '&' + add;
+  }
+  return {
+    title: '发型新时代到来，快来看看吧',
+    path: sharePath,
+    imageUrl: imageUrl,
+    success: function (res) {
+      // 转发成功
+      console.log("转发成功:" + JSON.stringify(res));
+      var shareTickets = res.shareTickets;
+    },
+    fail: function (res) {
+      // 转发失败
+      console.log("转发失败:" + JSON.stringify(res));
+    }
+  }
+}
+
 function getNewsShareTitle() {
   //return '快速浏览科技前沿资讯精华';
   return app.globalData.ShareTitle;
@@ -521,6 +542,7 @@ module.exports = {
   isQuizOwner,
   getNetShareTitle,
   getShareTitle,
+  getShareFunction,
   getNewsShareTitle,
   getQuestionList,
   uploadAwardImage,
