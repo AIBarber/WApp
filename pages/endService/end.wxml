@@ -1,5 +1,23 @@
 <!--pages/endService/end.wxml-->
-<view style='display:flex;flex-direction:row;margin-top:0px;margin-left:2%;margin-bottom:0px; width:94%;background:white;' data-id='{{id}}'>
-   <image style="width:100px;height:90px;margin-left:6px;margin-top:12px;margin-bottom:12px;" src='{{path}}' mode='scaleToFill'/>
+<view style='display:flex;flex-direction:row;margin-top:0px;margin-left:5%;margin-bottom:10px; width:90%;background:white;' data-id='{{id}}'>
+   <image style="width:100px;height:90px;margin-left:6px;margin-top:15px;margin-bottom:10px;" src='{{path}}' mode='scaleToFill'/>
    <text>进店时长：{{}}</text>
    </view>
+
+   <view class='orderDetail'>
+    <text>订单详情\n</text>
+    <image style="width:80px;height:70px;margin-top:15px;margin-left:5px;margin-bottom:6px;" src='{{path}}' mode='scaletoFill'/>
+      <view class='orderDetail_text'>
+         <text style='margin-top:8px' decode='true'>时间：{{time}}&nbsp;&nbsp;消费金额：10元 </text>  
+         <text style='margin-top:8px' decode='true'>发型：{{style}}&nbsp;&nbsp;时长：{{time_stay}} </text>   
+         <text style='margin-top:8px' decode='true'> 发型师:{{name}}</text>     
+      </view>
+   </view>
+
+   <view style='font-size:17px;text-align:center;margin-top:10px;'>
+    <text>总金额：10元</text>
+   </view>
+   
+   <button class='button' bindtap='toPaymentCode'>出示收款码</button>
+   
+

@@ -20,7 +20,8 @@
     "pages/myHistoryCost/cost",
     "pages/myCustomers/customers",
     "pages/myOrders/orders",
-    "pages/endService/end"
+    "pages/endService/end",
+    "pages/Dial/dial"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -28,7 +28,7 @@
  <text style='margin-top:5px;font-size:18px;' decode='true' wx:if="{{current_barber!=null}}">&nbsp;&nbsp;当前店内发型师：{{current_barber.length}}人</text>
    <!-- <view wx:for="{{current_barber}}" wx:if="{{face_id!=null}}"> -->
    <view wx:for="{{current_barber}}" wx:key='id'>
-      <template is="barber" data="{{id:item.openid,name:item.name,level:item.level,years:item.years,path:item.photo_url,status:item.status,userType:item.type}}"/>
+      <template is="barber" data="{{id:item.openid,name:item.name,level:item.level,years:item.years,path:item.photo_url,status:item.status,phone:item.mobile}}"/>
    </view>
 </view>
 
