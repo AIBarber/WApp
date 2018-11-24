@@ -24,9 +24,11 @@
        <text style='margin-top:5px' decode='true'>发型：{{style}}&nbsp;&nbsp;时长：{{time_stay}} </text>   
      <text style='margin-top:5px' decode='true'> 发型师:{{name}}&nbsp;&nbsp;评分{{score}}</text>     
       </view>
+      <navigator url='/pages/photo_share/share?share_img={{pathE}}' >
      <view style='display:flex;flex-direction:column;font-size:16px;margin-left:25px;margin-bottom:6px; '>
-      <button plain="true" style='border:0' open-type="share" data-id="{{pathE}}"><image style="width:60px;height:55px;margin-top:6px;margin-left:5px;margin-bottom:6px;right:1px" src='{{pathE}}' mode='scaletoFill'/></button>
-       <text style='margin-top:-10px'>完成照片</text>
+      <image style="width:60px;height:55px;margin-top:6px;margin-left:5px;margin-bottom:6px;right:1px" src='{{pathE}}' mode='scaletoFill'/>
+       <text>完成照片</text>
        </view>
+      </navigator>
    </view>
 </template>

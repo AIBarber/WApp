@@ -1,0 +1,13 @@
+<!--pages/photo_share/share.wxml-->
+<view class='img'>
+    <image src='{{img}}' mode='scaleToFill' style='margin-top:5%;width:100%;height:90%'></image>
+ </view>
+
+ <button open-type="share" class='button'>分享</button>
+
+ <view class='text'>
+    <text>分享给新朋友,朋友登陆后可以获得理发优惠券一张</text>
+ </view>
+
+ <button class='button2' bindtap='saveToLocal'> 保存至相册</button>
+ 

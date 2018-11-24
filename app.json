@@ -22,7 +22,8 @@
     "pages/endService/end",
     "pages/Dial/dial",
     "pages/end_Cus/end_Cus",
-    "pages/QR_code/code"
+    "pages/QR_code/code",
+    "pages/photo_share/share"
   ],
   "window": {
     "backgroundTextStyle": "light",
