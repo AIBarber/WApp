@@ -28,7 +28,7 @@ Page({
  getReservation: function() {
     console.log('getDataList ' + api.CustomerSubscribeList);
     wx.showNavigationBarLoading();
-
+    var that=this;
     util.weshowRequest(
       api.CustomerSubscribeList,
       {

@@ -18,7 +18,6 @@
 .image{
   width:60px;
   height:45px;
-  background-color: #ccc;
   margin-bottom: 5px;
 }
 .code{

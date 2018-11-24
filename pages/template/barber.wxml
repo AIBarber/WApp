@@ -12,9 +12,8 @@
              <text style='margin-top:6px;' wx:if="{{status==3}}">状态：洗发中 </text> 
              <text style='margin-top:6px;' wx:if="{{status==4}}">状态：理发中 </text>          
              <text style='margin-top:6px;' wx:if="{{status!=3 && status!=4 }}">状态：空闲中  </text>
-             <navigator url='/pages/Reservation/reserve?barberid={{id}}'><button style='color:white;background:green;width:65px;height:33px;right:-85%;font-size:14px;margin-top:0px'>预约</button></navigator>
-         </view>
-          
+             <navigator url='/pages/Reservation/reserve?barberid={{id}}'><button style='color:white;background:green;width:65px;height:33px;right:-60%;font-size:14px;margin-top:0px'>预约</button></navigator>
+         </view>   
       </view>
    </view>
 </template>
