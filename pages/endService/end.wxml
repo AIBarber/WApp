@@ -1,6 +1,6 @@
 <!--pages/endService/end.wxml-->
-<view style='display:flex;flex-direction:row;margin-top:0px;margin-left:5%;margin-bottom:10px; width:90%;background:white;' data-id='{{id}}'>
-   <image style="width:100px;height:90px;margin-left:6px;margin-top:15px;margin-bottom:10px;" src='{{path}}' mode='scaleToFill'/>
+<view style='display:flex;flex-direction:row;margin-top:15px;margin-left:5%;margin-bottom:10px; width:90%;background:white;' data-id='{{id}}'>
+   <image style="width:100px;height:90px;margin-left:6px;margin-top:15px;margin-bottom:10px;background:#ccc" src='{{path}}' mode='scaleToFill'/>
    <text>进店时长：{{}}</text>
    </view>
 
