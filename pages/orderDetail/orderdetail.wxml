@@ -1,4 +1,0 @@
-<!--pages/orderDetail/orderdetail.wxml-->
-<button class='buttonLeft' bindtap='backToprevPage'>
-       <image src='../../icon/back.png' mode='widthFix' class='imageLeft'></image>
- </button>

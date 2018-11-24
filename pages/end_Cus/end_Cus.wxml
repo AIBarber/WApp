@@ -1,4 +1,4 @@
-<!--pages/endService/end.wxml-->
+<!--pages/end_Cus/end_Cus.wxml-->
 <view style='font-size:17px;margin-left:5%;margin-top:20%;'>
    <text>订单详情\n</text>
 </view>
@@ -16,6 +16,7 @@
     <text>应付金额：{{detail.payed_price}}元</text>
    </view>
    
-   <button class='button' bindtap='toQRCode'>扫码查看详情</button>
+   <button class='button' bindtap='toPaymentCode'>扫码查看详情</button>
    
+
 

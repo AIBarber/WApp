@@ -10,7 +10,6 @@
     "pages/IDSuccess/idSuccess",
     "pages/ShopDetial/detial",
     "pages/Customer_detial/Cdetial",
-    "pages/orderDetail/orderdetail",
     "pages/Reservation/reserve",
     "pages/Subscribe_action/subscribe",
     "pages/ShopList/personal",
@@ -21,7 +20,9 @@
     "pages/myCustomers/customers",
     "pages/myOrders/orders",
     "pages/endService/end",
-    "pages/Dial/dial"
+    "pages/Dial/dial",
+    "pages/end_Cus/end_Cus",
+    "pages/QR_code/code"
   ],
   "window": {
     "backgroundTextStyle": "light",

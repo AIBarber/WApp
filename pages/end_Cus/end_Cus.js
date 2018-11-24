@@ -1,4 +1,4 @@
-// pages/endService/end.js
+// pages/end_Cus/end_Cus.js
 var app = getApp();
 var util = require('../../utils/util.js');
 var api = require('../../config/api.js');
@@ -8,8 +8,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    id:null,
-    detail:null
+    id: null,
+    detail: null
   },
 
   /**
@@ -18,12 +18,12 @@ Page({
   onLoad: function (options) {
     console.log('orderid: ' + options.orderid)
     this.setData({
-      id:options.orderid
+      id: options.orderid
     })
     this.getData_Order();
   },
 
-  getData_Order:function(){
+  getData_Order: function () {
     console.log('getDataList ' + api.OrderDetail);
     wx.showNavigationBarLoading();
     var that = this;
@@ -54,9 +54,7 @@ Page({
     wx.stopPullDownRefresh();
   },
 
-  toQRCode:function(){
-    wx.navigateTo({
-      url: '../QR_code/code',
-    })
+  toPaymentCode: function () {
+
   }
 })

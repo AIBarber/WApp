@@ -187,9 +187,8 @@ Page({
        console.log('getDataList ');
        console.log(res);
        that.getDataList_customer();
-       // that.setData({ cost_list: res.data.list });
        wx.navigateTo({
-         url: '../endService/end',
+         url: '../endService/end?orderid='+res.data.data.orderid,
        })
      }).catch((err) => {
        console.log('getDataList err' + err);
