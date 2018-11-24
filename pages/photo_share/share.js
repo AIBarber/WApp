@@ -21,7 +21,8 @@ Page({
   },
 
   onShareAppMessage: function (ops) {
-    return model.getShareFunction('share_img=' + this.data.img, this.data.img);
+    var path = 'pages/photo_share/share?openid=' + app.globalData.userid + '&share_img =' + this.data.img;
+    return model.getShareFunction(path, this.data.img);
   },
 
   stopRefreshing: function () {

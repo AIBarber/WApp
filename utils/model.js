@@ -507,7 +507,7 @@ function getShareTitle(my, phase, name, time, award) {
 function getShareFunction(add, imageUrl) {
   var sharePath = 'pages/ShopList/List?openid=' + app.globalData.userid;
   if (add != null && add != '') {
-    sharePath += '&' + add;
+    sharePath = add;
   }
   return {
     title: '发型新时代到来，快来看看吧',
