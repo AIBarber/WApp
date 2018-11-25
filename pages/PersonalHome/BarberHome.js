@@ -137,7 +137,7 @@ function getDataList_time(that) {
     });
 }
 
-function updateBarberSubscribe(that) {
+function updateBarberSubscribe(that, slot, select) {
   console.log('updateBarberSubscribe ' + api.BarberSubscribeManage);
   //wx.showNavigationBarLoading();
 
@@ -145,8 +145,10 @@ function updateBarberSubscribe(that) {
     api.BarberSubscribeManage,
     {
       'size': 10,
-      'barberid': that.data.barberID,
-      'data': that.data.timeToReserve
+      'barberid': app.globalData.userid,
+      'data': that.data.timeToReserve,
+      'unavailable_time': slot,
+      'slot_status': select
     },
     'POST').then(res => {
       //if (res.data) {}
@@ -165,9 +167,10 @@ function select0(that, event) {
   console.log('select0 ' + id);
   //console.log(event)
   var temp = that.data.timeToReserve;
+  console.log('slot0 ' + temp.list[id].slot0);
   temp.list[id].select0 = 1 - temp.list[id].select0;
   that.setData({ timeToReserve: temp });
-  updateBarberSubscribe(that);
+  updateBarberSubscribe(that, temp.list[id].slot0, temp.list[id].select0);
 }
 
 function select1(that, event) {
@@ -177,7 +180,7 @@ function select1(that, event) {
   var temp = that.data.timeToReserve;
   temp.list[id].select1 = 1 - temp.list[id].select1;
   that.setData({ timeToReserve: temp });
-  updateBarberSubscribe(that);
+  updateBarberSubscribe(that, temp.list[id].slot1, temp.list[id].select1);
 }
 
 function select2(that, event) {
@@ -187,7 +190,7 @@ function select2(that, event) {
   var temp = that.data.timeToReserve;
   temp.list[id].select2 = 1 - temp.list[id].select2;
   that.setData({ timeToReserve: temp });
-  updateBarberSubscribe(that);
+  updateBarberSubscribe(that, temp.list[id].slot2, temp.list[id].select2);
 }
 
 function backToprevPage(that) {
