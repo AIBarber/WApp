@@ -88,7 +88,7 @@ function getCurService(that) {
       console.log(res);
       // success
       that.setData({ cur_service: res.data.data.list });
-      // console.log(that.data);
+      console.log(that.data.cur_service);
       that.stopRefreshing();
       //that.waitUpdate();
     }).catch((err) => {
@@ -173,7 +173,7 @@ function goToMyBarber() {
 
 function changeToBarber(that) {
   console.log('changeToBarber');
-  if (that.data.info.type != 1) {
+  if (that.data.info != null && that.data.info.type != 1) {
     wx.navigateTo({
       url: '../FaceIdentity/Identity',
     })

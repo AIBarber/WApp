@@ -9,10 +9,10 @@
  </view>
     <button bindtap='changeToBarber' class='button'>切换为理发师</button>
  <view class='text1'>
-    <text wx:if="{{reservation!=null}}">我的预约:</text>
+    <text wx:if="{{reservation != null && reservation != ''}}">我的预约:</text>
  </view>
 
-<view class='top' wx:if="{{reservation!=null}}">
+<view class='top' wx:if="{{reservation != null && reservation != ''}}">
     <view class='column'>
       <image class='image' src='../../icon/icon_time.png' mode='scaleToFill'/>
       <text>{{reservation.sub_time_str}}</text>
@@ -27,15 +27,15 @@
    </view>
 </view>
 
-<view class='code' wx:if="{{reservation!=null}}">
+<view class='code' wx:if="{{reservation != null && reservation != ''}}">
   <text>预约码：{{reservation.sub_code}}\n</text>
 </view>
 
 <view class='text1'>
-    <text wx:if="{{cur_service!=null}}">当前服务:</text>
+    <text wx:if="{{cur_service != null && cur_service != ''}}">当前服务:</text>
  </view>
 
-<view class='top' wx:if="{{cur_service!=null}}">
+<view class='top' wx:if="{{cur_service != null && cur_service != ''}}">
     <view class='column'>
       <image class='image' src='../../icon/icon_time.png' mode='scaleToFill' wx:if="{{cur_service.status==0}}"/>
       <image class='image' src='../../icon/icon_time.png' mode='scaleToFill' wx:if="{{cur_service.status==1}}"/> 

@@ -139,6 +139,12 @@ Page({
         //if (res.data) {}
         console.log('getDataList ');
         console.log(res.data);
+        if (res.data.errorCode == 10013) {
+          wx.showModal({
+            title: '出错了',
+            content: '当前顾客未在理发位置，请确认',
+          })
+        }
         that.getDataList_customer();
       }).catch((err) => {
         console.log('getDataList err' + err);
