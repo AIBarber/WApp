@@ -69,7 +69,7 @@
     <view class='view-right'>
       <text style='margin-top:10px'>年龄：{{attribute.age}}</text>
       <text style='margin-top:22px'>性别：{{attribute.gender}}</text>
-      <text style='margin-top:22px'>眉眼鼻唇</text>
+      <text style='margin-top:22px'>{{attribute.expression}}</text>
     </view>
  </view>
 
