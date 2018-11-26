@@ -1,4 +1,7 @@
 // pages/photo_share/share.js
+var app = getApp();
+var api = require('../../config/api.js');
+var util = require('../../utils/util.js');
 var model = require('../../utils/model.js');
 
 Page({
