@@ -18,13 +18,14 @@ Page({
    */
   onLoad: function (options) {
     console.log(options)
+    console.log(options.share_img)
     this.setData({
       img: options.share_img
     })
   },
 
   onShareAppMessage: function (ops) {
-    var path = 'pages/photo_share/share?openid=' + app.globalData.userid + '&share_img =' + this.data.img;
+    var path = 'pages/photo_share/share?openid=' + app.globalData.userid + '&share_img=' + this.data.img;
     return model.getShareFunction(path, this.data.img);
   },
 
