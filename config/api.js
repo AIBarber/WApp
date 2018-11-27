@@ -49,6 +49,8 @@ module.exports = {
   FaceRegister: ApiRootUrl + 'bdcloud/faceregister',
   FaceDetect: ApiRootUrl + 'bdcloud/facedetect',
   BarberRegister: ApiRootUrl + 'barber/register',
+  BarberBlance: ApiRootUrl + 'barber/getbalance',
+  BarberCashdraw: ApiRootUrl + 'barber/cashdraw',
   CustomerSubscribeList: ApiRootUrl + 'customer/subscribelist',
   CustomerDiscountList: ApiRootUrl + 'customer/discountlist',
   CustomerAttribute: ApiRootUrl + 'customer/attribute',

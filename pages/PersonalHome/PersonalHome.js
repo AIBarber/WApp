@@ -127,6 +127,10 @@ Page({
     BarberHome.goToMyCustomers();
   },
 
+  gotoCashdraw: function () {
+    BarberHome.gotoCashdraw();
+  },
+
   changeToBarber: function () {
     CustomerHome.changeToBarber(this);
     BarberHome.getDataList_details(this);

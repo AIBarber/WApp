@@ -6,9 +6,10 @@
 
    <view style='display:flex;flex-direction:row;font-size:17px;' data-id='{{barberDetails.id}}'>
     <image class='image2' src='{{barberDetails.photo_url}}' mode='scaleToFill'/>
-    <view style='display:flex;flex-direction:column;margin-top:10px;'>
+    <view style='display:flex;flex-direction:column;margin-top:0px;'>
       <text decode='true' style='margin-top:10px;'>级别：{{barberDetails.level}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;年限：{{barberDetails.years}}</text>
-      <text style='margin-top:10px;'>电话：{{barberDetails.telephone}}</text>
+      <text style='margin-top:10px;'>电话：{{barberDetails.mobile}}</text>
+      <text style='margin-top:10px;'>余额：￥{{barberDetails.balance}}</text>
     </view>
  </view>
 
@@ -54,11 +55,14 @@
 <text>\n</text>
 <view style='display:flex;flex-direction:column;font-size:17px;'>
      <view class='text2' bindtap='goToMyOrders'>
-      <text style='width:80%;'>我的订单：{{orders.length}}单</text>
-      <image class='image4' src='../../icon/camera_back.png' mode='scaleToFill'/>
+      <text style='width:80%;'>我的订单：{{orders.length}}</text>
+      <image class='image4' src='../../icon/icon_rightarrow.png' mode='scaleToFill'/>
     </view>
     <!-- <view class='text2' bindtap='goToMyCustomers'>
       <text style='width:80%;'>我的顾客：{{}}人</text>
-      <image class='image4' src='../../icon/camera_back.png' mode='scaleToFill'/>
+      <image class='image4' src='../../icon/icon_rightarrow.png' mode='scaleToFill'/>
     </view> -->
  </view>
+
+
+ <button bindtap='gotoCashdraw' class="op-button" type="primary">余额提现</button>

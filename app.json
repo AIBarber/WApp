@@ -23,6 +23,7 @@
     "pages/Dial/dial",
     "pages/end_Cus/end_Cus",
     "pages/QR_code/code",
+    "pages/cashdraw/cashdraw",
     "pages/photo_share/share"
   ],
   "window": {

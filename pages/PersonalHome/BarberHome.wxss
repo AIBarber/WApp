@@ -40,8 +40,8 @@
   font-weight: bold;
 }
 .image4{
-  width:40px;
-  height:30px;
+  width:15px;
+  height:20px;
   /* background-color: #ccc; */
   margin-bottom: 5px;
   margin-top:-7px;
@@ -53,4 +53,15 @@
   margin-top:8px;
   margin-bottom:20px;
   margin-right: 20px;
+}
+
+
+.op-button {
+  width: 60%;
+  height: 80rpx;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-top: 60rpx;
+  margin-bottom: 10rpx;
+  font-size: 34rpx;
 }

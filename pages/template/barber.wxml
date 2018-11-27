@@ -40,7 +40,7 @@
   <view style='display:flex;flex-direction:row;margin-top:0px;margin-left:2%; width:94%;background:white;border-width:5px;border-color:black; border-right: 1rpx solid black;border-top: 1rpx solid black;border-left: 1rpx solid black;border-bottom: 1rpx solid black;' data-id='{{id}}'>
    <image style="width:80px;height:70px;margin-left:6px;margin-top:10px;margin-bottom:6px;" src='{{path}}' mode='scaletoFill' />
       <view style="display:flex;flex-direction:column;margin-left:18px;font-size:15px" > 
-         <text decode='true' style='margin-top:5px'>时间:{{time}} </text>   
+         <text decode='true' style='margin-top:5px'>{{time}}   &nbsp;&nbsp;金额：￥{{price}}</text>   
          <text decode='true' style='margin-top:5px'>发型:{{hairstyle}}</text> 
            <text decode='true' style='margin-top:5px'>评分：{{score}} </text> 
       </view>

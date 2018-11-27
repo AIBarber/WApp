@@ -72,18 +72,18 @@ function getDataList_reservations(that) {
 }
 
 function getDataList_orders(that) {
-  console.log('getDataList ' + api.StoreDetail);
+  console.log('getDataList ' + api.BarberOrderList);
   wx.showNavigationBarLoading();
 
   util.weshowRequest(
-    api.StoreDetail,
+    api.BarberOrderList,
     {
       'size': 10,
       'storeid': that.data.barberID
     },
     'POST').then(res => {
       //if (res.data) {}
-      console.log('getDataList 3333333333333333333333333333333333');
+      console.log('BarberOrderList');
       console.log(res.data.data);
       // success
       that.setData({ orders: res.data.data });
@@ -217,6 +217,12 @@ function goToMyCustomers() {
   })
 }
 
+function gotoCashdraw() {
+  wx.navigateTo({
+    url: '../cashdraw/cashdraw',
+  })
+}
+
 
 module.exports = {
   getDataList_details,
@@ -225,6 +231,7 @@ module.exports = {
   getDataList_time,
   goToMyCustomers,
   goToMyOrders,
+  gotoCashdraw,
   backToprevPage,
   changeToCustomer,
   updateBarberSubscribe,
