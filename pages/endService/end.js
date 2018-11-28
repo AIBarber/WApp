@@ -8,7 +8,8 @@ Page({
    */
   data: {
     id:null,
-    detail:null
+    detail:null,
+    access: null
   },
 
   /**
@@ -54,8 +55,18 @@ Page({
   },
 
   toQRCode:function(){
-    wx.navigateTo({
-      url: '../QR_code/code',
+    var that=this;
+    wx.request({
+      url: 'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wxba71617fb1ac4213&secret=aa2c4031799c35fb656da3ea2a0071b3',
+      success: function (res) {
+        console.log(res)
+        that.setData({
+          access: res.data.access_token
+        })
+        wx.navigateTo({
+          url: '../QR_code/code?access_token=' + that.data.access,
+        })
+      }
     })
   }
 })

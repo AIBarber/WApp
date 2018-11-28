@@ -1,2 +1,4 @@
 <!--pages/QR_code/code.wxml-->
-
+<view class='img'>
+   <image src="data:image/png;base64,{{img}}"/>
+</view>
