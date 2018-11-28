@@ -32,7 +32,7 @@ Page({
       method: 'POST',
       responseType: 'arraybuffer',
       data: {
-        path: 'pages/QR_code/code', 
+        path: 'pages/end_Cus/end_Cus', 
         width: 430,
         auto_color: false,// 自动配置线条颜色，如果颜色依然是黑色，则说明不建议配置主色调
         line_color: { "r": "0", "g": "0", "b": "0" } // auto_color 为 false 时生效，使用 rgb 设置颜色 例如 {"r":"xxx","g":"xxx","b":"xxx"} 十进制表示
