@@ -23,6 +23,8 @@
 <view style='display:flex;flex-direction:row;' wx:if="{{userType==1}}">
   <button class='button' bindtap='startService' disabled="{{customer_detail.status!=1}}">开始理发</button>
   <button class='button' bindtap='endService' disabled="{{customer_detail.status!=4}}">结束理发</button>
+  <!-- <button class='button' bindtap='endService' disabled="{{customer_detail.status!=4}}" wx:if='{{customer_detail.status==4}}'>结束理发</button>
+   <button class='button'  bindta='sendInfo' disabled="{{customer_detail.status==4}}" wx:if='{{customer_detail.status!=4}}'>提醒支付</button> -->
 </view>
 
 <view>

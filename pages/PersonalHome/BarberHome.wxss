@@ -44,7 +44,7 @@
   height:20px;
   /* background-color: #ccc; */
   margin-bottom: 5px;
-  margin-top:-7px;
+  margin-top:-2px;
 }
 .image2{
   width:80px;

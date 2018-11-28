@@ -1,6 +1,7 @@
 // pages/end_Cus/end_Cus.js
 var app = getApp();
 var util = require('../../utils/util.js');
+var wxpay = require('../../utils/wxpay.js');
 var api = require('../../config/api.js');
 Page({
 
@@ -16,9 +17,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log('orderid: ' + options.orderid)
+    // var scene = decodeURIComponent(options.scene)
+    var scene=options.orderid
     this.setData({
-      id: options.orderid
+      id: scene
     })
     this.getData_Order();
   },
@@ -54,7 +56,15 @@ Page({
     wx.stopPullDownRefresh();
   },
 
-  toPaymentCode: function () {
-
+  confirmPay: function () {
+    var that=this;
+    wxpay.startPay(that.data.detail.payed_price*100,util.getCurrentSecond()).
+    then(res1 => {
+      console.log(res1);
+      createQuizSuccess(that.data.id,that.data.detail.payed_price);
+    }).catch((err1 => {
+      console.log(err1);
+      util.showDialog('支付失败！');
+    }))
   }
 })

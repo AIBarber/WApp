@@ -2,3 +2,7 @@
 <view class='img'>
    <image src="data:image/png;base64,{{img}}"/>
 </view>
+<text>\n</text>
+<view style='text-align:center' bindtap='goToPay'>
+    <text >请扫码进行支付</text>
+</view>

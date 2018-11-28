@@ -120,6 +120,7 @@ function startPay(fee, paySn) {
       head: 'application/x-www-form-urlencoded',
       data: formData, // 设置请求的 header
       success: function (res) {
+        console.log('$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$')
         console.log(res);
         var param = onUnifiedorderResult(res);
         callWxPay(param).then(res => {

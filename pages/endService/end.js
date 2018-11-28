@@ -64,7 +64,7 @@ Page({
           access: res.data.access_token
         })
         wx.navigateTo({
-          url: '../QR_code/code?access_token=' + that.data.access,
+          url: '../QR_code/code?access_token=' + that.data.access+'&id='+that.data.id,
         })
       }
     })

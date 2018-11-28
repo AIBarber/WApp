@@ -15,7 +15,8 @@ Page({
     cost_count: 0,
     barberid: null,
     flag: null  ,//是否结束理发标志
-    time: null
+    time: null,
+    access: ''
   },
 
   /**
@@ -210,5 +211,36 @@ Page({
   stopRefreshing: function () {
     wx.hideNavigationBarLoading();
     wx.stopPullDownRefresh();
+  },
+
+  sendInfo:function(){
+    var that = this;
+    wx.request({
+      url: 'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wxba71617fb1ac4213&secret=aa2c4031799c35fb656da3ea2a0071b3',
+      success: function (res) {
+        console.log(res)
+        that.setData({
+          access: res.data.access_token
+        })
+      }
+    })
+    wx.request({
+      url: 'https://api.weixin.qq.com/cgi-bin/message/wxopen/template/send?access_token='+that.data.access,
+      method: 'POST',
+      "touser": that.data.id,//用户的openid
+      "template_id": 'PRO3ST6aZ9H5wrBOGWRBrUdh86hUqnvC2OlW8tveYbg',//模板id
+      "page": "pages/PersonalHome/PersonalHome",
+      "form_id": formid,//表单id
+      "data": {
+        "keyword1": {
+          "单号": '',
+          "金额": ''
+        },
+        "keyword2": {
+          "value": gettime()
+        },
+      },
+      "emphasis_keyword": "keyword1.DATA" //将keyword1放大
+    })
   }
 })

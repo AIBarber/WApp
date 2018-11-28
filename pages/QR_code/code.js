@@ -8,7 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    id:null,
+    id:'',
     img: null
   },
 
@@ -17,6 +17,9 @@ Page({
    */
   onLoad: function (options) {
     var that=this;
+    that.setData({
+      id: options.id
+    })
     that.getQrCode_A(options.access_token);
   },
 
@@ -33,9 +36,10 @@ Page({
       responseType: 'arraybuffer',
       data: {
         path: 'pages/end_Cus/end_Cus', 
+        scene: that.data.id,
         width: 430,
         auto_color: false,// 自动配置线条颜色，如果颜色依然是黑色，则说明不建议配置主色调
-        line_color: { "r": "0", "g": "0", "b": "0" } // auto_color 为 false 时生效，使用 rgb 设置颜色 例如 {"r":"xxx","g":"xxx","b":"xxx"} 十进制表示
+        line_color: { "r": "0", "g": "0", "b": "0" } // auto_color 为 false 时生效，使用 rgb 设置颜色 
       },
       success: function (res) {
         console.log(res.data)
@@ -45,4 +49,10 @@ Page({
       }
     })
   },
+
+  goToPay:function(){
+    wx.navigateTo({
+      url: '../end_Cus/end_Cus?orderid='+this.data.id,
+    })
+  }
 })

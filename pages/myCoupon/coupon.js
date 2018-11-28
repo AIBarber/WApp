@@ -10,7 +10,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    discountList: []
+    discountList: [],
+    icon_path: '../../icon/icon_paid.png'
   },
 
   /**
@@ -38,7 +39,7 @@ Page({
         // success
         that.setData({ discountList: res.data.data.list });
         // console.log(that.data);
-        //that.stopRefreshing();
+        that.stopRefreshing();
         //that.waitUpdate();
       }).catch((err) => {
         console.log('getDataList err' + err);
@@ -53,8 +54,8 @@ Page({
       });
   },
 
-  backToprevPage: function () {
-    wx.navigateBack({
-    })
-  },
+  stopRefreshing: function () {
+    wx.hideNavigationBarLoading();
+    wx.stopPullDownRefresh();
+  }
 })
