@@ -18,6 +18,9 @@ Page({
 
 
   onLoad: function () {
+    this.setData({
+      userid: app.globalData.userid
+    });
   },
 
   onShow: function () {
@@ -39,26 +42,18 @@ Page({
 
   getCashDrawData: function (uid) {
     var that = this;
+    console.log('getCashDrawData');
+    console.log(uid);
+    console.log(app.globalData.userid);
     util.weshowRequest(api.BarberBlance,
       {
         'openid': uid
-      }, 'GET').then(res => {
+      }, 'POST').then(res => {
         console.log("BarberBlance");
         console.log(res);
-        if (res.data.data.list.length <= 0) {
-          return;
-        }
-         
-        var hasDr = false;
-        var cur = res.data.data.list[0].current_time;
-        if (cur - res.data.data.list[0].add_time < 24 * 3600) {
-          hasDr = true;
-        }
-        console.log(hasDr);
         that.setData({
-          cashdrawData: res.data.data.list[0],
-          balance: app.globalData.accountInfo.balance,
-          hasDraw: hasDr
+          balance: res.data.data.balance,
+          hasDraw: res.data.data.hasDraw
         });
         // success
       }).catch((err) => {
