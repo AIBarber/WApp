@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    phone: null
+    phone: ''
   },
 
   /**
@@ -23,7 +23,7 @@ Page({
    calling: function () {
      var that=this;
     wx.makePhoneCall({
-      phoneNumber: '13011097533',
+      phoneNumber: that.data.phone,
       success: function () {
         console.log("拨打电话成功！")
       },

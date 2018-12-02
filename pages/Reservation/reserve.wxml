@@ -37,5 +37,5 @@
 <text>\n</text>
 <text style='margin-left:5%;'>他/她的作品：</text>
  <view wx:for="{{works}}" wx:key="id">
-     <template is="barber_works" data="{{id:item.id,time:item.show_time,hairstyle:item.style,score:item.score,path:item.end_trackfile}}"/>
+     <template is="barber_works" data="{{id:item.id,time:item.show_time,hairstyle:item.style,score:item.score,path:item.end_trackfile,flag:0}}"/>
  </view>

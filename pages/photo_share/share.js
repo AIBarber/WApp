@@ -10,7 +10,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    img: null
+    img: null,
+    flag: null
   },
 
   /**
@@ -20,7 +21,8 @@ Page({
     console.log(options)
     console.log(options.share_img)
     this.setData({
-      img: options.share_img
+      img: options.share_img,
+      flag: options.flag
     })
   },
 
