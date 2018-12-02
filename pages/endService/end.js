@@ -57,7 +57,7 @@ Page({
   toQRCode:function(){
     var that=this;
     wx.request({
-      url: 'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wxba71617fb1ac4213&secret=aa2c4031799c35fb656da3ea2a0071b3',
+      url: 'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wxc906ef0ac5d12a4b&secret=d9ec4e3623fec6268922f5b60aeed56a',
       success: function (res) {
         console.log(res)
         that.setData({

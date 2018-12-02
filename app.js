@@ -270,7 +270,7 @@ App({
     faceid: null,
     userLevel: 0,
     sessionKey: '',
-    appid: 'wxba71617fb1ac4213',
+    appid: 'wxc906ef0ac5d12a4b',
     latitude: 39.9181370976,
     longitude: 116.3002283764,
     ShareTitle: 'ShareTitle',
