@@ -4,7 +4,6 @@
     "pages/PersonalHome/PersonalHome",
     "pages/FaceLogin/Login",
     "pages/FaceIdentity/Identity",
-    "pages/UserLogin/ULogin",
     "pages/LoginConfirm/LoginConfirm",
     "pages/IDConfirm/IDConfirm",
     "pages/IDSuccess/idSuccess",

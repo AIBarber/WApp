@@ -95,8 +95,9 @@ Page({
   },
 
   backToprevPage: function () {
-    wx.navigateBack({
-    })
+   wx.switchTab({
+     url: '../PersonalHome/PersonalHome',
+   })
   },
 
   stopRefreshing: function () {

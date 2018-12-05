@@ -29,9 +29,11 @@ Page({
             src: res.tempImagePath
           })
           this.getFaceId()
-          wx.navigateTo({
-            url: '../IDConfirm/IDConfirm',
-          })
+          // if(this.data.faceid!=null){
+            wx.navigateTo({
+              url: '../IDConfirm/IDConfirm',
+            })
+          // }
         }
       })
     } ,    
@@ -53,9 +55,6 @@ Page({
   backToprevPage: function () {
     wx.navigateBack({
     })
-    // wx.switchTab({
-    //   url: '../LoginMain/LoginMain'
-    // })
   },
 
   getFaceId: function () {
@@ -70,7 +69,7 @@ Page({
         'timestamp': util.getCurrentSecond()
       },
       success: function (res) {
-        console.log('********************************************')
+        console.log('*******************888888888*************************')
         console.log(res)
         var data = JSON.parse(res.data)
         console.log(data)
@@ -87,7 +86,7 @@ Page({
         else{
           wx.showModal({
             title: '提示',
-            content: '未识别出人脸，请确保人像清晰完整。点击人像区域重新进行拍摄！',
+            content: '未识别出人脸，请确保人像清晰完整。点击重新进行拍摄！',
           })
         }
       },
